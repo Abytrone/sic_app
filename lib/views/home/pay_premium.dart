@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sic_app/services/constants.dart';
+import 'package:sic_app/services/paystack_services.dart';
+import 'package:sic_app/views/home/payment.dart';
 import 'package:sic_app/views/widgets/dropdown_form_field.dart';
 import 'package:sic_app/views/widgets/input_field.dart';
 import 'package:sic_app/views/widgets/primary_button.dart';
 
-class PayPremium extends StatelessWidget {
+class PayPremium extends StatefulWidget {
   const PayPremium({Key? key}) : super(key: key);
 
+  @override
+  State<PayPremium> createState() => _PayPremiumState();
+}
+
+class _PayPremiumState extends State<PayPremium> {
+  final PaystackServices paystackServices = PaystackServices();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +52,12 @@ class PayPremium extends StatelessWidget {
                     ],
                     onChanged: (newValue) {},
                   ),
-                  const PrimaryButtton(label: 'Proceed'),
+                  PrimaryButtton(
+                    label: 'Proceed',
+                    onPressed: () {
+                      Get.to(() => const PaymentScreen());
+                    },
+                  ),
                 ],
               ),
             ),

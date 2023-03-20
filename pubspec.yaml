@@ -34,6 +34,12 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   carousel_slider: ^4.0.0
   iconsax: ^0.0.8
+  intl: ^0.17.0
+  http: ^0.13.4
+  # flutter_paystack: ^1.0.7
+  # pay_with_paystack: ^1.0.2
+  badges: ^3.0.2
+  webview_flutter: ^4.0.7
 
 
 

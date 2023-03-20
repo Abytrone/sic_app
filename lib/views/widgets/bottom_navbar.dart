@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sic_app/services/constants.dart';
+import 'package:sic_app/views/account/account.dart';
+import 'package:sic_app/views/help/help.dart';
 import 'package:sic_app/views/home/home.dart';
+import 'package:sic_app/views/news/news.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({Key? key}) : super(key: key);
@@ -38,15 +41,14 @@ class _BottomNavbarState extends State<BottomNavbar> {
         child: PageView(
           controller: _pageController,
           onPageChanged: (index) {
-            // if (widget.productIndex == false) {
             setState(() => _currentIndex = index);
-            // } else {
-            //   setState(() => _currentIndex = 2);
-            // }
           },
           children: <Widget>[
             const HomeScreen(),
-            Container(),
+            const NewsScreen(),
+            const HelpScreen(),
+            // Container(),
+            const AccountScreen(),
           ],
         ),
       ),
@@ -95,31 +97,31 @@ class _BottomNavbarState extends State<BottomNavbar> {
               padding: const EdgeInsets.only(bottom: 3.0),
               child: Icon(
                 Iconsax.info_circle,
-                color: _currentIndex == 1
+                color: _currentIndex == 2
                     ? Theme.of(context).colorScheme.primary
                     : const Color.fromRGBO(153, 153, 153, 1),
               ),
             ),
             label: 'Help',
           ),
-          BottomNavigationBarItem(
-            icon: Padding(
-              padding: const EdgeInsets.only(bottom: 3.0),
-              child: Icon(
-                Iconsax.alarm,
-                color: _currentIndex == 1
-                    ? Theme.of(context).colorScheme.primary
-                    : const Color.fromRGBO(153, 153, 153, 1),
-              ),
-            ),
-            label: 'Emergency',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Padding(
+          //     padding: const EdgeInsets.only(bottom: 3.0),
+          //     child: Icon(
+          //       Iconsax.alarm,
+          //       color: _currentIndex == 3
+          //           ? Theme.of(context).colorScheme.primary
+          //           : const Color.fromRGBO(153, 153, 153, 1),
+          //     ),
+          //   ),
+          //   label: 'Emergency',
+          // ),
           BottomNavigationBarItem(
             icon: Padding(
               padding: const EdgeInsets.only(bottom: 3.0),
               child: Icon(
                 Iconsax.user,
-                color: _currentIndex == 1
+                color: _currentIndex == 3
                     ? Theme.of(context).colorScheme.primary
                     : const Color.fromRGBO(153, 153, 153, 1),
               ),

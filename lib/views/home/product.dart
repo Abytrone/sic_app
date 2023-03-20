@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sic_app/models/product_model.dart';
@@ -214,6 +215,84 @@ class Product extends StatelessWidget {
                   ),
                   // const SizedBox(height: 10),
                 ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            const Divider(thickness: 1),
+            // const SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Beneficiaries',
+                  style: TextStyle(
+                    color: kPrimaryColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(kPrimaryColor)),
+                  child: const Text(
+                    'Add New',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 5),
+            ListTile(
+              title: const Text('Rayaan Yahaya'),
+              subtitle: const Text('Brother'),
+              trailing: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: badges.Badge(
+                  badgeContent: const Text(
+                    '35%',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  badgeStyle: badges.BadgeStyle(
+                    badgeColor: kPrimaryColor,
+                    shape: badges.BadgeShape.square,
+                    borderRadius: BorderRadius.circular(5),
+                    elevation: 0,
+                  ),
+                ),
+              ),
+              tileColor: kPrimaryColor.withOpacity(.1),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+              ),
+            ),
+            const SizedBox(height: 10),
+            ListTile(
+              title: const Text('Fatahiya Yahaya'),
+              subtitle: const Text('Daughter'),
+              trailing: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: badges.Badge(
+                  badgeContent: const Text(
+                    '50%',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  badgeStyle: badges.BadgeStyle(
+                    badgeColor: kPrimaryColor,
+                    shape: badges.BadgeShape.square,
+                    borderRadius: BorderRadius.circular(5),
+                    elevation: 0,
+                  ),
+                ),
+              ),
+              tileColor: kPrimaryColor.withOpacity(.1),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
               ),
             ),
           ],

@@ -21,12 +21,12 @@ class HomeTopMenu extends StatelessWidget {
       HomeMenue(
         icon: 'assets/insurance.png',
         title: 'New Policy',
-        route: '',
+        route: 'newpolicy',
       ),
       HomeMenue(
         icon: 'assets/claim.png',
         title: 'Submit Claim',
-        route: '',
+        route: 'submitclaim',
       ),
     ];
     return Padding(
@@ -43,11 +43,9 @@ class HomeTopMenu extends StatelessWidget {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
-                Get.toNamed('paypremium');
+                Get.toNamed(homeMenueItem[index].route);
               },
               child: Container(
-                // height: 200,
-                // width: 150,
                 padding: const EdgeInsets.all(20),
                 decoration: const BoxDecoration(
                   color: Colors.white,

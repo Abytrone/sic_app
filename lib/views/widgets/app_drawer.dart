@@ -62,7 +62,7 @@ Drawer appDrawer() {
             text: 'History', icon: Iconsax.clock, color: Colors.black),
         const Divider(thickness: 0.5),
         const DrawreItem(
-            text: 'Submitt Claim',
+            text: 'Submit Claim',
             icon: Iconsax.money_recive,
             color: Colors.black),
         const Divider(thickness: 0.5),
