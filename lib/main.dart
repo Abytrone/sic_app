@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:sic_app/services/theme.dart';
 import 'package:sic_app/views/home/home.dart';
+import 'package:sic_app/views/home/pay_premium.dart';
 import 'package:sic_app/views/splash_screen.dart';
 import 'package:sic_app/views/widgets/bottom_navbar.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         'navbar': (BuildContext context) => const BottomNavbar(),
         'home': (BuildContext context) => const HomeScreen(),
+        'paypremium': (BuildContext context) => const PayPremium(),
       },
     );
   }
